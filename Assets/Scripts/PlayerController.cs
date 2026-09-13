@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
             
             if (Input.GetKeyDown ("space") || Input.GetMouseButtonDown (0)) {
                 GameObject bullet  = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-                bullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed; //Set bullet speed.
+                bullet.GetComponent<Rigidbody2D>().linearVelocity = shootingDirection * bulletSpeed; //Set bullet speed.
                 bullet.transform.Rotate(0.0f, 0.0f, Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg);
 
                 //Destroy bullet after 10s seconds.
